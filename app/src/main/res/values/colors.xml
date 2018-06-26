@@ -13,4 +13,7 @@
     <color name="color_f6">#f6f6f6</color>
     <color name="bg_grid">#e4e4e4</color>
     <color name="color_999999">#999999</color>
+    <color name="color_text">#aaaaaa</color>
+    <color name="transparent">#00000000</color>
+
 </resources>

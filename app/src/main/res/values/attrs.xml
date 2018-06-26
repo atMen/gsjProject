@@ -51,16 +51,16 @@
     </string-array>
 
     <integer-array name="image_menu_sign">
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
-        <item>@drawable/index01_03</item>
+        <item>@drawable/xwdt</item>
+        <item>@drawable/zcgs</item>
+        <item>@drawable/fwzx</item>
+        <item>@drawable/xyjs</item>
+        <item>@drawable/jzfp</item>
+        <item>@drawable/fgdtj</item>
+        <item>@drawable/cyzj</item>
+        <item>@drawable/zscqfw</item>
+        <item>@drawable/xwqyml</item>
+        <item>@drawable/xhzc</item>
 
     </integer-array>
 

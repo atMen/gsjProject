@@ -2,19 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipChildren="false">
+    android:clipChildren="false"
+    >
 
     <FrameLayout
         android:id="@+id/contentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_bottom"/>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
-        android:background="#f4f4f4"
+        android:background="@drawable/bottm_bg"
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
@@ -22,43 +25,49 @@
             android:id="@+id/sy"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
+            android:gravity="bottom"
             android:layout_weight="1">
             <ImageView
                 android:id="@+id/dd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ty02_03" />
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/sybtn" />
 
             <TextView
-                android:layout_marginTop="3dp"
-                android:textSize="@dimen/font_size_14"
-                android:layout_centerInParent="true"
+                android:id="@+id/sy_tv"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="2dp"
+                android:textSize="@dimen/font_size_12"
+                android:layout_centerHorizontal="true"
                 android:text="首页"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/color_text"
                 android:layout_below="@+id/dd"/>
 
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="bottom">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            >
 
             <ImageView
                 android:id="@+id/dd5"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerInParent="true"
-                android:background="@color/blue"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/jqr"/>
             <TextView
                 android:layout_centerHorizontal="true"
                 android:padding="2dp"
-                android:textSize="@dimen/font_size_14"
+                android:layout_marginTop="5dp"
+                android:textSize="@dimen/font_size_12"
                 android:text="机器人"
+                android:textColor="@color/color_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dd5"/>
@@ -71,19 +80,23 @@
             android:id="@+id/mine"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
+            android:gravity="bottom"
             android:layout_weight="1">
+
             <ImageView
                 android:id="@+id/dd4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ty02_03" />
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/mine" />
             <TextView
-                android:layout_marginTop="3dp"
-                android:textSize="@dimen/font_size_14"
-                android:layout_centerInParent="true"
+                android:id="@+id/mine_tv"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="2dp"
+                android:textSize="@dimen/font_size_12"
                 android:text="我的"
+                android:textColor="@color/color_text"
+                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dd4"/>

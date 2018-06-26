@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#111111"
-            android:textSize="@dimen/font_size_14"
+            android:textSize="@dimen/font_size_12"
             android:textStyle="normal" />
     </LinearLayout>
 </RelativeLayout>

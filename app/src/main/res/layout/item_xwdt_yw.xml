@@ -35,7 +35,7 @@
                 <TextView
                     android:id="@+id/titlename"
                     android:layout_centerVertical="true"
-                    android:lines="1"
+                    android:lines="2"
                     android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -60,6 +60,7 @@
 
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/content"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"

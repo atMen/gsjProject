@@ -3,20 +3,31 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#ffffff"
+    android:background="#F5F5F5"
     android:orientation="vertical">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="首页"
-        android:gravity="center_horizontal"
-        android:paddingTop="25dp"
-        android:paddingBottom="10dp"
-        android:textSize="@dimen/font_size_18"
-        android:textColor="@color/white"
-        android:background="@color/blue"
-        />
+        android:layout_height="60dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/title_bg"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="首页"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/font_size_18"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,6 +61,11 @@
                 android:scrollbars="none"
                 android:verticalSpacing="1dp" />
 
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
 
             <ImageView
                 android:layout_width="match_parent"
@@ -58,20 +74,13 @@
                 />
 
 
-            <View
-                android:background="@color/gary_line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
 
             <View
-                android:background="#f4f4f4"
+                android:background="#F5F5F5"
                 android:layout_width="match_parent"
                 android:layout_height="15dp"/>
 
-            <View
-                android:background="@color/gary_line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+
 
             <RelativeLayout
                 android:layout_margin="5dp"
@@ -101,10 +110,7 @@
 
             </RelativeLayout>
 
-            <View
-                android:background="@color/gary_line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"/>
+
 
             <TextView
                 android:visibility="gone"
@@ -125,6 +131,7 @@
                 android:scrollbars="none"
                 android:verticalSpacing="1dp"
                 android:divider="@null"
+                android:layout_marginBottom="40dp"
                 />
 
         </LinearLayout>

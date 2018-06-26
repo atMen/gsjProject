@@ -27,7 +27,20 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".first.CPinfoActivity" />
         <activity android:name=".first.ZScodeActivity" />
-        <activity android:name=".first.gridbtn.xwdtInfoActivity"></activity>
+        <activity android:name=".first.gridbtn.xwdtInfoActivity" />
+        <activity android:name=".first.zcgs.zcgsActivity" />
+        <activity android:name=".first.zcgs.jrActivity" />
+        <activity android:name=".first.zcgs.flActivity" />
+        <activity android:name=".first.zcgs.pxActivity" />
+        <activity android:name=".first.zcgs.cyfwActivity" />
+        <activity android:name=".first.zcgs.yhActivity" />
+        <activity
+            android:name=".base.dialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/myTransparent" />
+        <activity android:name=".first.zcgs.cyxqActivity" />
+        <activity android:name=".first.fwzx.fwzx2Activity"></activity>
     </application>
 
 </manifest>

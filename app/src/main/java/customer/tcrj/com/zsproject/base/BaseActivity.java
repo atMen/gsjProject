@@ -18,6 +18,7 @@ import com.jaeger.library.StatusBarUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import customer.tcrj.com.zsproject.MainActivity;
 import customer.tcrj.com.zsproject.R;
 import customer.tcrj.com.zsproject.Utils.AppManager;
 import customer.tcrj.com.zsproject.Utils.DialogHelper;
@@ -57,7 +58,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void setStatusBar() {
-        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+//        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));
+        StatusBarUtil.setTranslucentForImageViewInFragment(this, 5,null);
     }
 
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

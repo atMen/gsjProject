@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
+    android:layout_marginTop="3dp"
+    app:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="3dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="8dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:id="@+id/cpname"
+                android:textSize="@dimen/font_size_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="小微抵押业务"
+                android:maxLines="1"
+                />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/time"
+            android:textSize="@dimen/font_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="业务要素：深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款"
+            android:lineSpacingExtra="5dp"
+
+            />
+
+        <TextView
+            android:layout_marginTop="7dp"
+            android:id="@+id/zgqx"
+            android:textSize="@dimen/font_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="最高期限："
+
+            />
+        <TextView
+            android:layout_marginTop="7dp"
+            android:id="@+id/nll"
+            android:textSize="@dimen/font_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="年利率："
+
+            />
+
+        <TextView
+            android:layout_marginTop="7dp"
+            android:id="@+id/zged"
+            android:textSize="@dimen/font_size_14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="最高额度："
+
+            />
+
+
+
+        <Button
+            android:id="@+id/btn_sq"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_bg"
+            android:text="我有申请意向"
+            android:textColor="@color/white"
+            android:layout_marginBottom="15dp"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

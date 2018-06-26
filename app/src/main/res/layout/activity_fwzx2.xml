@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <include layout="@layout/title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:paddingBottom="@dimen/margin_15"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tv_sclc"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="政策公示"
+                    android:textSize="@dimen/font_size_16"
+                    android:padding="10dp"
+                    android:textColor="@color/blue"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_xslc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地方政策"
+                    android:textSize="@dimen/font_size_16"
+                    android:padding="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_sld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="统计分析"
+                    android:textSize="@dimen/font_size_16"
+                    android:padding="10dp"
+                    />
+
+            </LinearLayout>
+
+
+            <customer.tcrj.com.zsproject.widget.MyGridView
+                android:id="@+id/grid_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:horizontalSpacing="1dp"
+                android:listSelector="@null"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="1dp" />
+
+
+
+
+            <View
+                android:background="#F5F5F5"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+
+
+
+            <RelativeLayout
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:drawablePadding="@dimen/dp_10"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点对点精准推送"
+                    android:textSize="18sp"
+                    android:textColor="#111"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:padding="8dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="更多"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/noData"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:text="暂无数据"
+                />
+
+            <customer.tcrj.com.zsproject.widget.MyListView
+                android:id="@+id/listview_my"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:horizontalSpacing="1dp"
+                android:listSelector="@null"
+                android:scrollbars="none"
+                android:verticalSpacing="1dp"
+                android:divider="@null"
+                android:layout_marginBottom="40dp"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

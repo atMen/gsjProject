@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f5f5f5"
+    >
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:id="@+id/rl_01"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@drawable/bg_button_background"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="@dimen/dp_4"
+                android:id="@+id/text"
+                android:background="@drawable/jr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_toRightOf="@+id/text"
+                android:text="金融服务"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:id="@+id/rl_02"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:id="@+id/text2"
+                android:background="@drawable/fl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:text="法律服务"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+
+            android:id="@+id/rl_03"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:id="@+id/text3"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:text="培训服务"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:id="@+id/rl_04"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/dp_4"
+            android:layout_weight="1"
+            android:background="@drawable/bg_button_background"
+            >
+
+            <ImageView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/cy"
+                android:text="企业基本信息" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="创业服务" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@+id/rl_05"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/text5"
+                android:background="@drawable/sj"
+                android:text="企业基本信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:text="数据信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:visibility="invisible"
+            android:id="@+id/rl_06"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_4"
+            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:layout_marginRight="@dimen/dp_4"
+                android:id="@+id/text6"
+                android:layout_centerVertical="true"
+                android:text="企业基本信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/text6"
+                android:text="计量器具信息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

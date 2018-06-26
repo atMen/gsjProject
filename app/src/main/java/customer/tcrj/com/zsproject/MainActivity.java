@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout sy;
     private RelativeLayout mine;
 
+    private TextView sytv;
+    private TextView minetv;
+
+    private ImageView dd;
+    private ImageView dd4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sy = (RelativeLayout) findViewById(R.id.sy);
         mine = (RelativeLayout) findViewById(R.id.mine);
+
+        sytv = (TextView) findViewById(R.id.sy_tv);
+        minetv = (TextView) findViewById(R.id.mine_tv);
+
+        dd = (ImageView) findViewById(R.id.dd);
+        dd4 = (ImageView) findViewById(R.id.dd4);
+
+
 
         sy.setOnClickListener(this);
         mine.setOnClickListener(this);
@@ -100,6 +115,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.sy:
 
                 if(num != 0){
+
+                    sytv.setTextColor(getResources().getColor(R.color.blue));
+                    minetv.setTextColor(getResources().getColor(R.color.color_text));
+
+                    dd.setImageResource(R.drawable.sybtn);
+                    dd4.setImageResource(R.drawable.mine);
+
+
                     setTabSelection(0);
                 }
 
@@ -109,6 +132,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.mine:
 
                 if(num != 1) {
+                    sytv.setTextColor(getResources().getColor(R.color.color_text));
+                    minetv.setTextColor(getResources().getColor(R.color.blue));
+
+                    dd.setImageResource(R.drawable.sybtn_gay);
+                    dd4.setImageResource(R.drawable.mine_blue);
+
                     setTabSelection(1);
                 }
                 num = 1;
