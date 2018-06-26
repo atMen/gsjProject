@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="12dp"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp">
+
+
+            <ImageView
+                android:id="@+id/sp_icon"
+                android:layout_width="100dp"
+                android:layout_height="80dp"
+                android:background="@drawable/banner1"
+                />
+
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+                <TextView
+                    android:id="@+id/titlename"
+                    android:layout_centerVertical="true"
+                    android:lines="1"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="入党积极分子的生活入党积极分子的生活"
+                    android:textColor="@color/black"
+                    />
+
+
+
+                <TextView
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/time"
+                    android:textSize="@dimen/font_size_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1992年3月12日"
+                    />
+
+
+
+
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/font_size_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:text="这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息这是新闻的简要信息"
+                    />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_grid"
+        />
+
+
+</LinearLayout>
