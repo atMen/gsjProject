@@ -29,6 +29,7 @@ import customer.tcrj.com.zsproject.adapter.MainMenuListAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
 import customer.tcrj.com.zsproject.bean.MenuEntity;
 import customer.tcrj.com.zsproject.bean.tzInfo;
+import customer.tcrj.com.zsproject.first.fgdtj.fgdtjActivity;
 import customer.tcrj.com.zsproject.first.fwzx.fwzx2Activity;
 import customer.tcrj.com.zsproject.first.gridbtn.xwdtInfoActivity;
 import customer.tcrj.com.zsproject.first.zcgs.zcgsActivity;
@@ -203,7 +204,7 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 //                toClass(mContext,djListActivity.class);//党建信息
                 break;
             case 5:
-//                toClass(mContext,flfgListActivity.class);//法律法规
+                toClass(mContext,fgdtjActivity.class);//法律法规
                 break;
             case 6:
 //                toClass(mContext,xzzfListActivity.class);//行政执法
