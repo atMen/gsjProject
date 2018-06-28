@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include layout="@layout/item_search" />
 
     <in.srain.cube.views.ptr.PtrClassicFrameLayout
         android:id="@+id/mPtrFrameLayout"

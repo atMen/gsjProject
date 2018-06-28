@@ -94,8 +94,15 @@ public class fwzx2Activity extends BaseActivity implements AdapterView.OnItemCli
                         Log.e("TAG","失败");
                         hideLoadingDialog();
 //                      Toast.makeText(mContext, "服务器连接错误", Toast.LENGTH_SHORT).show();
-                        listview_my.setVisibility(View.GONE);
-                        noData.setVisibility(View.VISIBLE);
+                        if(listview_my != null){
+                            listview_my.setVisibility(View.GONE);
+                        }
+
+                        if(noData != null){
+                            noData.setVisibility(View.VISIBLE);
+                        }
+
+
                     }
 
                     @Override

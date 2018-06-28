@@ -32,6 +32,7 @@ import customer.tcrj.com.zsproject.bean.tzInfo;
 import customer.tcrj.com.zsproject.first.fgdtj.fgdtjActivity;
 import customer.tcrj.com.zsproject.first.fwzx.fwzx2Activity;
 import customer.tcrj.com.zsproject.first.gridbtn.xwdtInfoActivity;
+import customer.tcrj.com.zsproject.first.jzfp.jzfpActivity;
 import customer.tcrj.com.zsproject.first.zcgs.zcgsActivity;
 import customer.tcrj.com.zsproject.widget.MyGridView;
 import customer.tcrj.com.zsproject.widget.MyListView;
@@ -201,10 +202,10 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 //                toClass(mContext,tsListActivity.class);//投诉
                 break;
             case 4:
-//                toClass(mContext,djListActivity.class);//党建信息
+                toClass(mContext,jzfpActivity.class);//精准扶贫
                 break;
             case 5:
-                toClass(mContext,fgdtjActivity.class);//法律法规
+                toClass(mContext,fgdtjActivity.class);//非公党团
                 break;
             case 6:
 //                toClass(mContext,xzzfListActivity.class);//行政执法
