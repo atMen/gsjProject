@@ -43,7 +43,8 @@
         <activity android:name=".first.fwzx.fwzx2Activity" />
         <activity android:name=".first.fgdtj.fgdtjActivity" />
         <activity android:name=".first.fgdtj.dthdActivity" />
-        <activity android:name=".first.jzfp.jzfpActivity"></activity>
+        <activity android:name=".first.jzfp.jzfpActivity" />
+        <activity android:name=".base.NewsinfoActivity"></activity>
     </application>
 
 </manifest>

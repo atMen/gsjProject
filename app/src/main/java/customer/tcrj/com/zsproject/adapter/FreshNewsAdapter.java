@@ -13,7 +13,9 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.Utils.ShowImageUtils;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 
 
 /**
@@ -21,22 +23,23 @@ import customer.tcrj.com.zsproject.bean.qyListInfo;
  * author: Will .
  * date: 2017/9/27 .
  */
-public class FreshNewsAdapter extends BaseQuickAdapter<qyListInfo.DataBean.ContentBean, BaseViewHolder> {
+public class FreshNewsAdapter extends BaseQuickAdapter<tpxwInfo.ListinfoBean, BaseViewHolder> {
     private Context mContext;
 
-    public FreshNewsAdapter(@Nullable List<qyListInfo.DataBean.ContentBean> data, Context context) {
+    public FreshNewsAdapter(@Nullable List<tpxwInfo.ListinfoBean> data, Context context) {
         super(R.layout.item_xwdt, data);
         this.mContext = context;
     }
 
 
     @Override
-    protected void convert(final BaseViewHolder helper, qyListInfo.DataBean.ContentBean item) {
-//        TextView name = helper.getView(R.id.name);
-//        TextView time = helper.getView(R.id.time);
-//        TextView sex = helper.getView(R.id.sex);
-//        TextView duty = helper.getView(R.id.duty);
-//        ImageView im_icon = helper.getView(R.id.im_icon);
+    protected void convert(final BaseViewHolder helper, tpxwInfo.ListinfoBean item) {
+        TextView name = helper.getView(R.id.tv_tpms);
+
+        ImageView im_icon = helper.getView(R.id.iv_tpxw);
+
+        name.setText(item.getTitle());
+        ShowImageUtils.showImageView(mContext,item.getThumbUrl(),im_icon);
 
     }
 

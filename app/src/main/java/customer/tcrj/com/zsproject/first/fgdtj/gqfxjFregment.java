@@ -21,6 +21,7 @@ import customer.tcrj.com.zsproject.adapter.xjDropMenuAdapter;
 import customer.tcrj.com.zsproject.adapter.zxwjAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.widget.CustomLoadMoreView;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -48,7 +49,7 @@ public class gqfxjFregment extends BaseFragment implements BaseQuickAdapter.OnIt
 
     private MyOkHttp mMyOkhttp;
     private zxwjAdapter detailAdapter;
-    private List<qyListInfo.DataBean.ContentBean> beanList;
+    private List<tpxwInfo.ListinfoBean> beanList;
 
     private int pageNum = 1;
     private boolean canPull = true;
@@ -85,9 +86,6 @@ public class gqfxjFregment extends BaseFragment implements BaseQuickAdapter.OnIt
         });
         beanList = new ArrayList<>();
 
-        for(int i = 0;i< 15;i++){
-            beanList.add(new qyListInfo.DataBean.ContentBean());
-        }
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setAdapter(detailAdapter = new zxwjAdapter(beanList, mContext));

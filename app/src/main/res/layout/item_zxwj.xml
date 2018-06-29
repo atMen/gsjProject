@@ -31,7 +31,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginRight="16.0dip"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="1"
             android:text="最新文件"
             android:textSize="16.0sp"/>
 

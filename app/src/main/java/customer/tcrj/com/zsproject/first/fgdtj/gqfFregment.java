@@ -11,16 +11,21 @@ import com.baiiu.filter.interfaces.OnFilterDoneListener;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import customer.tcrj.com.zsproject.ApiConstants;
 import customer.tcrj.com.zsproject.MyApp;
 import customer.tcrj.com.zsproject.R;
 import customer.tcrj.com.zsproject.adapter.DropMenuAdapter;
 import customer.tcrj.com.zsproject.adapter.zxwjAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.widget.CustomLoadMoreView;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -48,7 +53,7 @@ public class gqfFregment extends BaseFragment implements BaseQuickAdapter.OnItem
 
     private MyOkHttp mMyOkhttp;
     private zxwjAdapter detailAdapter;
-    private List<qyListInfo.DataBean.ContentBean> beanList;
+    private List<tpxwInfo.ListinfoBean> beanList;
 
     private int pageNum = 1;
     private boolean canPull = true;
@@ -95,10 +100,6 @@ public class gqfFregment extends BaseFragment implements BaseQuickAdapter.OnItem
             }
         });
         beanList = new ArrayList<>();
-
-        for(int i = 0;i< 15;i++){
-            beanList.add(new qyListInfo.DataBean.ContentBean());
-        }
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext));
         mRecyclerView.setAdapter(detailAdapter = new zxwjAdapter(beanList, mContext));
@@ -250,33 +251,33 @@ public class gqfFregment extends BaseFragment implements BaseQuickAdapter.OnItem
 //            disableLoadMoreIfNotFullPage(mRecyclerView,response.size());
 //        }
 //    }
-//
-//
-//    public void disableLoadMoreIfNotFullPage(RecyclerView recyclerView, final int size) {
-//        detailAdapter.setEnableLoadMore(false);
-//        if (recyclerView == null) return;
-//        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
-//        if (manager == null) return;
-//        if (manager instanceof LinearLayoutManager) {
-//            final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) manager;
-//
-//                recyclerView.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//
-//                        //要等到列表显示出来才可以去获取：findLastCompletelyVisibleItemPosition
-//                        if ((linearLayoutManager.findLastCompletelyVisibleItemPosition() + 1) != size) {
-//                            detailAdapter.setEnableLoadMore(true);
-//                        }
-//
-//                        Log.e("TAG","测试："+(linearLayoutManager.findLastCompletelyVisibleItemPosition() + 1));
-//                    }
-//                }, 1000);
-//
-//
-//
-//        }
-//    }
+
+
+    public void disableLoadMoreIfNotFullPage(RecyclerView recyclerView, final int size) {
+        detailAdapter.setEnableLoadMore(false);
+        if (recyclerView == null) return;
+        RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
+        if (manager == null) return;
+        if (manager instanceof LinearLayoutManager) {
+            final LinearLayoutManager linearLayoutManager = (LinearLayoutManager) manager;
+
+                recyclerView.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        //要等到列表显示出来才可以去获取：findLastCompletelyVisibleItemPosition
+                        if ((linearLayoutManager.findLastCompletelyVisibleItemPosition() + 1) != size) {
+                            detailAdapter.setEnableLoadMore(true);
+                        }
+
+                        Log.e("TAG","测试："+(linearLayoutManager.findLastCompletelyVisibleItemPosition() + 1));
+                    }
+                }, 1000);
+
+
+
+        }
+    }
 
     private void initFilterDropDownView() {
         String[] titleList = new String[] { "请选择市级"};

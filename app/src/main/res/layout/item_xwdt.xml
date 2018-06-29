@@ -5,16 +5,21 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/iv_tpxw"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/banner1"
+        android:scaleType="fitXY"
         />
 
     <TextView
+        android:layout_marginBottom="10dp"
+        android:id="@+id/tv_tpms"
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="这是图片新闻的描述信息"
+        android:lines="1"
+        android:textColor="@color/black"
         />
 
 </LinearLayout>

@@ -2,6 +2,8 @@ package customer.tcrj.com.zsproject.adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -9,7 +11,9 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.Utils.ShowImageUtils;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 
 
 /**
@@ -17,22 +21,24 @@ import customer.tcrj.com.zsproject.bean.qyListInfo;
  * author: Will .
  * date: 2017/9/27 .
  */
-public class zyhdAdapter extends BaseQuickAdapter<qyListInfo.DataBean.ContentBean, BaseViewHolder> {
+public class zyhdAdapter extends BaseQuickAdapter<tpxwInfo.ListinfoBean, BaseViewHolder> {
     private Context mContext;
 
-    public zyhdAdapter(@Nullable List<qyListInfo.DataBean.ContentBean> data, Context context) {
+    public zyhdAdapter(@Nullable List<tpxwInfo.ListinfoBean> data, Context context) {
         super(R.layout.item_zyhd, data);
         this.mContext = context;
     }
 
 
     @Override
-    protected void convert(final BaseViewHolder helper, qyListInfo.DataBean.ContentBean item) {
-//        TextView name = helper.getView(R.id.name);
-//        TextView time = helper.getView(R.id.time);
-//        TextView sex = helper.getView(R.id.sex);
-//        TextView duty = helper.getView(R.id.duty);
-//        ImageView im_icon = helper.getView(R.id.im_icon);
+    protected void convert(final BaseViewHolder helper, tpxwInfo.ListinfoBean item) {
+        TextView name = helper.getView(R.id.cpname);
+        TextView time = helper.getView(R.id.time);
+        ImageView im_icon = helper.getView(R.id.iv_icon);
+
+        name.setText(item.getTitle());
+        time.setText(item.getShowTime());
+        ShowImageUtils.showImageView(mContext,item.getThumbUrl(),im_icon);
 
     }
 

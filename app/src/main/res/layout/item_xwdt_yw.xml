@@ -22,6 +22,7 @@
                 android:layout_width="100dp"
                 android:layout_height="80dp"
                 android:background="@drawable/banner1"
+                android:scaleType="fitXY"
                 />
 
         <LinearLayout
