@@ -64,6 +64,14 @@
 
     </integer-array>
 
+
+        <declare-styleable name="CountDownButton">
+            <attr name="millisinfuture" format="integer"/>
+            <attr name="countdowninterva" format="integer"/>
+            <attr name="normalColor" format="color"/>
+            <attr name="countDownColor" format="color"/>
+        </declare-styleable>
+
     <!--<style name="dialogSlideAnim" mce_bogus="1" parent="android:Animation">-->
         <!--<item name="android:windowEnterAnimation">@anim/dialog_bottom_slide_in</item>-->
         <!--<item name="android:windowExitAnimation">@anim/dialog_bottom_slide_out</item>-->

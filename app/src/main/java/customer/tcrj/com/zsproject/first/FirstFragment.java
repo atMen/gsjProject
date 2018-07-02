@@ -9,11 +9,17 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.GsonResponseHandler;
+import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +34,14 @@ import customer.tcrj.com.zsproject.adapter.MainMenuAdapter;
 import customer.tcrj.com.zsproject.adapter.MainMenuListAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
 import customer.tcrj.com.zsproject.bean.MenuEntity;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.bean.tzInfo;
 import customer.tcrj.com.zsproject.first.fgdtj.fgdtjActivity;
 import customer.tcrj.com.zsproject.first.fwzx.fwzx2Activity;
 import customer.tcrj.com.zsproject.first.gridbtn.xwdtInfoActivity;
 import customer.tcrj.com.zsproject.first.jzfp.jzfpActivity;
 import customer.tcrj.com.zsproject.first.zcgs.zcgsActivity;
+import customer.tcrj.com.zsproject.widget.GlideImageLoader;
 import customer.tcrj.com.zsproject.widget.MyGridView;
 import customer.tcrj.com.zsproject.widget.MyListView;
 
@@ -42,7 +50,7 @@ import customer.tcrj.com.zsproject.widget.MyListView;
  * Created by leict on 2018/3/22.
  */
 
-public class FirstFragment extends BaseFragment implements AdapterView.OnItemClickListener {
+public class FirstFragment extends BaseFragment implements AdapterView.OnItemClickListener, OnBannerListener {
 
     @BindView(R.id.more)
     TextView more;
@@ -56,7 +64,8 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
     @BindView(R.id.grid_sign)
     public MyGridView myGridView;
 
-
+    @BindView(R.id.banner)
+    Banner banner;
 
     MainMenuAdapter adapter1;
     MainMenuListAdapter adapterlist;
@@ -70,13 +79,14 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
     @Override
     protected void setView() {
         mMyOkhttp = MyApp.getInstance().getMyOkHttp();
-
+        titles = new ArrayList<>();
     }
 
 
     @Override
     protected void setData() {
         getDataFromNet();
+        geticonDataFromNet();
         CharSequence[] sign = this.getResources().getStringArray(R.array.firdt_btn_name);
         TypedArray imagesign = this.getResources().obtainTypedArray(R.array.image_menu_sign);
         List<MenuEntity> dataList = new ArrayList<>();
@@ -106,21 +116,73 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 
     }
 
+    private void geticonDataFromNet() {
+        JSONObject jsonObject = new JSONObject();
 
-    //设置轮播图数据
-//    List<picInfo.DataBean> bannerList;
-//    private List<String> titles;
-//    private void setBannerData(List<picInfo.DataBean> bannerList) {
-//
-//        banner.setImages(bannerList)
-//                .setBannerTitles(titles)
-//                .setImageLoader(new GlideImageLoader())
-//                .setOnBannerListener(this)
-//                .start()
-//                .updateBannerStyle(BannerConfig.NUM_INDICATOR_TITLE);
-//
-//
-//    }
+        try {
+            jsonObject.put("pagesize", "4");
+            jsonObject.put("pageindex", "1");
+            jsonObject.put("siteId", ApiConstants.siteId);
+            jsonObject.put("id", ApiConstants.YWDT);
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mMyOkhttp.post()
+                .url(ApiConstants.xwdt_tpxwlistApi)
+                .jsonParams(jsonObject.toString())
+                .enqueue(new GsonResponseHandler<tpxwInfo>() {
+                    @Override
+                    public void onFailure(int statusCode, String error_msg) {
+
+                        Toast.makeText(mContext, error_msg, Toast.LENGTH_SHORT).show();
+
+
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, tpxwInfo response) {
+//                        Toast.makeText(mContext, response.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        if(response.getState() == 1){
+
+                            bannerList = response.getListinfo();
+//                            bannerList1 = response.getData().get(1);
+
+                            Log.e("TAG","bannerList"+bannerList.size());
+                            if(bannerList.size()>0 ){
+
+                                for(int i = 0;i < bannerList.size(); i++){
+                                    titles.add(bannerList.get(i).getTitle());
+
+                                    Log.e("TAG","msg"+bannerList.get(i).getThumbUrl());
+                                }
+                                setBannerData(bannerList);
+//                                icon_title.setText(bannerList.get(0).getTitle());
+                            }
+
+                        }
+                    }
+                });
+    }
+
+
+//    设置轮播图数据
+    List<tpxwInfo.ListinfoBean> bannerList;
+    private List<String> titles;
+    private void setBannerData(List<tpxwInfo.ListinfoBean> bannerList) {
+
+        banner.setImages(bannerList)
+                .setBannerTitles(titles)
+                .setImageLoader(new GlideImageLoader())
+                .setOnBannerListener(this)
+                .start()
+                .updateBannerStyle(BannerConfig.NUM_INDICATOR_TITLE);
+
+
+    }
 
     List<tzInfo.DataBean> content;
     public void getDataFromNet() {
@@ -238,5 +300,36 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 ////        }
 //
 //    }
+
+    //如果你需要考虑更好的体验，可以这么操作
+    @Override
+    public void onStart() {
+        super.onStart();
+        //开始轮播
+        banner.startAutoPlay();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //结束轮播
+        banner.stopAutoPlay();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+//        mMZBanner.pause();//暂停轮播
+    }
+//    tpxwInfo.ListinfoBean
+    @Override
+    public void OnBannerClick(int position) {
+//        tpxwInfo.ListinfoBean dataBean = bannerList.get(position);
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("picInfo",dataBean);
+//        toClass(mContext,NewsDetailActivity.class,bundle);
+
+        T(position+"");
+    }
 
 }

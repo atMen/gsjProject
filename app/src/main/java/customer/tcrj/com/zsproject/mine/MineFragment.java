@@ -2,10 +2,14 @@ package customer.tcrj.com.zsproject.mine;
 
 
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import butterknife.OnClick;
+import customer.tcrj.com.zsproject.MainActivity;
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.RegisteActivity;
 import customer.tcrj.com.zsproject.base.BaseFragment;
 
 
@@ -15,6 +19,8 @@ import customer.tcrj.com.zsproject.base.BaseFragment;
 
 public class MineFragment extends BaseFragment {
 
+    @BindView(R.id.rl_01)
+    RelativeLayout rl_01;
 
 
     @Override
@@ -36,27 +42,14 @@ public class MineFragment extends BaseFragment {
 
 
 
+    @OnClick({R.id.rl_01})
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rl_01:
+                toClass(mContext,RegisteActivity.class);
+                break;
 
-//    @Override
-//    public void onClick(View v) {
-//
-////        switch (v.getId()){
-////
-////            case R.id.ll_xxks:
-////                toClass(mContext,XxkcActivity.class);//学习考试
-////                break;
-////            case R.id.ll_xxcx:
-////                toClass(mContext,XxcxActivity.class);//信息查询
-////                break;
-////            case R.id.ll_hdjl:
-////                toClass(mContext,hdjlnewActivity.class);//互动交流
-////                break;
-////            case R.id.ll_xxfb:
-////                toClass(mContext,releaseActivity.class);//信息发布
-////                break;
-////
-////        }
-//
-//    }
+        }
+    }
 
 }

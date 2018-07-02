@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
+    <color name="appbg">#F4F9FE</color>
     <color name="red">#DF342C</color>
     <color name="blue">#509CFE</color>
     <color name="login_textcolor">#999999</color>
