@@ -50,6 +50,8 @@
         <item>协会之窗</item>
     </string-array>
 
+
+
     <integer-array name="image_menu_sign">
         <item>@drawable/xwdt</item>
         <item>@drawable/zcgs</item>

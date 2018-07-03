@@ -21,6 +21,23 @@ import java.util.List;
 public class Utils {
     public static int pageSize = 10;
 
+    //读取方法
+    public static String getJson(Context context, String fileName) {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            AssetManager assetManager = context.getAssets();
+            BufferedReader bf = new BufferedReader(new InputStreamReader(assetManager.open(fileName)));
+            String line;
+            while ((line = bf.readLine()) != null) {
+                stringBuilder.append(line);
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return stringBuilder.toString();
+    }
+
     /**
      * 对于一个没有被载入或者想要动态载入的界面, 都需要使用inflate来载入
      *

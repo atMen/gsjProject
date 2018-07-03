@@ -45,10 +45,11 @@ public class qyRegisteFregment extends BaseFragment {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
+
         if (!countDownButton.isFinish()) {
             countDownButton.cancel();
         }
+        super.onDestroy();
     }
 
 }

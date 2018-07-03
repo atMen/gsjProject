@@ -5,9 +5,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.tsy.sdk.myokhttp.MyOkHttp;
 import com.tsy.sdk.myokhttp.response.GsonResponseHandler;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +22,16 @@ import butterknife.OnClick;
 import customer.tcrj.com.zsproject.ApiConstants;
 import customer.tcrj.com.zsproject.MyApp;
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.Utils.Constant;
+import customer.tcrj.com.zsproject.Utils.Utils;
 import customer.tcrj.com.zsproject.adapter.MainMenuAdapter;
 import customer.tcrj.com.zsproject.adapter.MainMenuListAdapter;
+import customer.tcrj.com.zsproject.adapter.zcgsAdapter;
 import customer.tcrj.com.zsproject.base.BaseActivity;
 import customer.tcrj.com.zsproject.bean.MenuEntity;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.bean.tzInfo;
+import customer.tcrj.com.zsproject.bean.zcgsInfo;
 import customer.tcrj.com.zsproject.widget.MyGridView;
 import customer.tcrj.com.zsproject.widget.MyListView;
 
@@ -44,7 +54,7 @@ public class fwzx2Activity extends BaseActivity implements AdapterView.OnItemCli
 
 
 
-    MainMenuAdapter adapter1;
+    zcgsAdapter adapter1;
     MainMenuListAdapter adapterlist;
     private MyOkHttp mMyOkhttp;
 
@@ -62,23 +72,64 @@ public class fwzx2Activity extends BaseActivity implements AdapterView.OnItemCli
     @Override
     protected void setData() {
         getDataFromNet();
-        CharSequence[] sign = this.getResources().getStringArray(R.array.firdt_btn_name);
-        TypedArray imagesign = this.getResources().obtainTypedArray(R.array.image_menu_sign);
-        List<MenuEntity> dataList = new ArrayList<>();
-        adapter1 = new MainMenuAdapter(this);
-
-        for (int i = 0; i < sign.length; i++) {
-            MenuEntity quick = new MenuEntity();
-            quick.setMenuId(i);
-            quick.setImageId(imagesign.getResourceId(i, 0));
-            quick.setMenuName(sign[i].toString());
-            dataList.add(quick);
-        }
-
-        adapter1.setData(dataList);
-        myGridView.setAdapter(adapter1);
+//        CharSequence[] sign = this.getResources().getStringArray(R.array.firdt_btn_name);
+//        TypedArray imagesign = this.getResources().obtainTypedArray(R.array.image_menu_sign);
+//        List<MenuEntity> dataList = new ArrayList<>();
+        adapter1 = new zcgsAdapter(this);
         myGridView.setOnItemClickListener(this);
+        getGirdData("ebeac7f05c334cd6bb365545018bdad9");
+//        for (int i = 0; i < sign.length; i++) {
+//            MenuEntity quick = new MenuEntity();
+//            quick.setMenuId(i);
+//            quick.setImageId(imagesign.getResourceId(i, 0));
+//            quick.setMenuName(sign[i].toString());
+//            dataList.add(quick);
+//        }
+
+
     }
+
+    private void getGirdData(String code) {
+        String cityJson = Utils.getJson(this, Constant.CITY_DATA);
+
+        zcgsInfo zcgsInfo = new Gson().fromJson(cityJson, zcgsInfo.class);
+        adapter1.setData(zcgsInfo.getListinfo());
+        myGridView.setAdapter(adapter1);
+//        JSONObject jsonObject = new JSONObject();
+//
+//        try {
+//            jsonObject.put("parentId", code);
+//
+//
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//
+//        mMyOkhttp.post()
+//                .url(ApiConstants.xwdt_tpxwlistApi)
+//                .jsonParams(jsonObject.toString())
+//                .enqueue(new GsonResponseHandler<zcgsInfo>() {
+//                    @Override
+//                    public void onFailure(int statusCode, String error_msg) {
+//
+//                        Toast.makeText(fwzx2Activity.this, error_msg, Toast.LENGTH_SHORT).show();
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(int statusCode, zcgsInfo response) {
+////                        Toast.makeText(mContext, response.getMessage(), Toast.LENGTH_SHORT).show();
+//                        List<zcgsInfo.ListinfoBean> listinfo = response.getListinfo();
+//
+//                        adapter1.setData(listinfo);
+//                        myGridView.setAdapter(adapter1);
+//
+//                    }
+//                });
+    }
+
 
     List<tzInfo.DataBean> content;
     public void getDataFromNet() {
@@ -136,7 +187,7 @@ public class fwzx2Activity extends BaseActivity implements AdapterView.OnItemCli
             case R.id.more:
                 break;
             case R.id.tv_xslc:
-                setGirdviewData();
+//                getGirdData();
                 break;
 //
 //            case R.id.ll_cxlc:
@@ -154,21 +205,5 @@ public class fwzx2Activity extends BaseActivity implements AdapterView.OnItemCli
         }
     }
 
-    private void setGirdviewData(){
-        CharSequence[] sign = this.getResources().getStringArray(R.array.firdt_btn_name);
-        TypedArray imagesign = this.getResources().obtainTypedArray(R.array.image_menu_sign);
-        List<MenuEntity> dataList = new ArrayList<>();
-        adapter1 = new MainMenuAdapter(this);
 
-        for (int i = 0; i < 1; i++) {
-            MenuEntity quick = new MenuEntity();
-            quick.setMenuId(i);
-            quick.setImageId(imagesign.getResourceId(i, 0));
-            quick.setMenuName(sign[i].toString());
-            dataList.add(quick);
-        }
-
-        adapter1.setData(dataList);
-        myGridView.setAdapter(adapter1);
-    }
 }
