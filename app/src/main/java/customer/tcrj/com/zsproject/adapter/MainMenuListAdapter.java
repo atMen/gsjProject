@@ -10,7 +10,10 @@ import android.widget.TextView;
 import java.util.List;
 
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.bean.tzInfo;
+
+import static android.R.attr.data;
 
 
 /**
@@ -19,7 +22,7 @@ import customer.tcrj.com.zsproject.bean.tzInfo;
  */
 
 public class MainMenuListAdapter extends BaseAdapter {
-    private List<tzInfo.DataBean> itemList;
+    private List<tpxwInfo.ListinfoBean> itemList;
     private final Context context;
     private final LayoutInflater inflater;
 
@@ -29,10 +32,10 @@ public class MainMenuListAdapter extends BaseAdapter {
 
     }
 
-    public void setData(tzInfo list) {
+    public void setData(tpxwInfo list) {
 
         if(list != null){
-            itemList = list.getData();
+            itemList = list.getListinfo();
 
         }
 
@@ -42,7 +45,7 @@ public class MainMenuListAdapter extends BaseAdapter {
     public int getCount() {
 
 
-        return 3;
+        return itemList.size();
     }
 
     @Override
@@ -61,7 +64,7 @@ public class MainMenuListAdapter extends BaseAdapter {
         if(itemList == null)
         return null;
 
-        tzInfo.DataBean data = itemList.get(id);
+        tpxwInfo.ListinfoBean data = itemList.get(id);
         if (data == null)
             return null;
         final ViewHolder viewHolder;

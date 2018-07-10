@@ -13,6 +13,7 @@ import customer.tcrj.com.zsproject.first.gridbtn.zxwjFregment;
 import customer.tcrj.com.zsproject.first.gridbtn.zyhdFregment;
 import customer.tcrj.com.zsproject.first.jzfp.nzxxFregment;
 import customer.tcrj.com.zsproject.first.jzfp.tsncpFregment;
+import customer.tcrj.com.zsproject.first.jzfp.tzbbFregment;
 import customer.tcrj.com.zsproject.first.jzfp.wyfpFregment;
 
 /**
@@ -32,7 +33,7 @@ public class jzfpFragmentPagerAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return new wyfpFregment();
         } else if (position == 1) {
-            return new xwdeTPFregment();
+            return new tzbbFregment();
         }else if (position == 2){
             return new zxwjFregment();
         }else if (position == 3){

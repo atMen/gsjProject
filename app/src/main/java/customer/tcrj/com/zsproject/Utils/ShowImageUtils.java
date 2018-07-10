@@ -30,7 +30,6 @@ public class ShowImageUtils {
                 .load(url)
                 .placeholder(R.drawable.ic_zwt)
                 .error(R.drawable.ic_zwt)
-
                 .into(imgeview);
 
 

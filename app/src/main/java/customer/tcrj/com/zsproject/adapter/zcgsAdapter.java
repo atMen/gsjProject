@@ -24,17 +24,17 @@ import customer.tcrj.com.zsproject.bean.zcgsInfo;
  */
 
 public class zcgsAdapter extends BaseAdapter {
-    private List<zcgsInfo.ListinfoBean> itemList;
+    private List<zcgsInfo> itemList;
     private final Context context;
     private final LayoutInflater inflater;
 
     public zcgsAdapter(Context context) {
         this.context = context;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.itemList = new ArrayList<zcgsInfo.ListinfoBean>();
+        this.itemList = new ArrayList<zcgsInfo>();
     }
 
-    public void setData(List<zcgsInfo.ListinfoBean> list) {
+    public void setData(List<zcgsInfo> list) {
         this.itemList.clear();
         this.itemList.addAll(list);
         notifyDataSetChanged();
@@ -59,7 +59,7 @@ public class zcgsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int id, View view, ViewGroup parent) {
-        final zcgsInfo.ListinfoBean entity = (zcgsInfo.ListinfoBean) itemList.get(id);
+        final zcgsInfo entity = (zcgsInfo) itemList.get(id);
         if (entity == null)
             return null;
         final ViewHolder viewHolder;

@@ -20,20 +20,48 @@ public class ApiConstants {
   public static final String MTGZ = "BZjmqi";
 
 
+//http://192.168.20.240:8181/
+public static final String URLBASE8080 = "http://192.168.20.240:8080/";
+  public static final String URLBASE = "http://192.168.20.240:8181/";
+  public static final String BASEIMAGE = "http://192.168.20.240:8080/web.files";
 
-  private static final String URLBASE = "http://192.168.20.240:8181/";
-    private static final String URLROOT = "http://192.168.20.21:8891/";
-
-    /**
-     * 通知信息列表
-     */
-    public static final String tzlistApi = URLROOT+"Mobile/GetTZGG?Key=";
 
     /**
-     * 通知信息列表
+     * 新闻动态
      */
     public static final String xwdt_tpxwlistApi = URLBASE+"drosin_cms/baseRest/findInfoList";
 
 
+  /**
+   * sxipept/courseWare/getCourseWareList
+   */
+  public static final String fwzx_pxlistApi = URLBASE8080+"sxipept/courseWare/getCourseWareList";
 
+
+  /**
+   * /sxipept/aidpoor/getDeptInfoList
+   */
+  public static final String zcgs_listApi = URLBASE8080+"sxipept/aidpoor/getDeptInfoList";
+
+  /**
+   * sxipept/serviceCentre/getProductList
+   */
+  public static final String fwzx_jr_listApi = URLBASE8080+"sxipept/serviceCentre/getProductList";
+
+
+  /**
+   * 法律服务
+   */
+  public static final String fwzx_fl_listApi = URLBASE8080+"sxipept/serviceCentre/findLawyerInfo";
+
+
+  /**
+   * 栏目获取
+   */
+  public static final String zcgs_s_listApi = URLBASE+"drosin_cms/baseRest/findCategoryListByPid";
+
+  /**
+   * 栏目获取
+   */
+  public static final String sjfp_tz_listApi = URLBASE8080+"sxipept/aidpoor/getAidPoorStatisticalList";
 }

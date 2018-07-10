@@ -23,7 +23,14 @@ public class pxfwFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        return new pxfwFregment();
+        if(position == 0){
+            return  new pxfwFregment("10301");
+        }else if(position == 1){
+            return new pxfwFregment("10302");
+        }else if(position == 2){
+            return new pxfwFregment("10303");
+        }
+        return new pxfwFregment("10304");
     }
 
     @Override

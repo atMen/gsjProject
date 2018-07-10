@@ -184,29 +184,52 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 
     }
 
-    List<tzInfo.DataBean> content;
+    List<tpxwInfo.ListinfoBean> content;
     public void getDataFromNet() {
 
         showLoadingDialog("加载中..");
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+
+            jsonObject.put("pagesize", "5");
+            jsonObject.put("pageindex","1");
+            jsonObject.put("siteId", ApiConstants.siteId);
+            jsonObject.put("id","");
+            jsonObject.put("hits","true");
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         mMyOkhttp.post()
-                .url(ApiConstants.tzlistApi+"07321bc2cd")
-                .addParam("pageSize","5")
-                .addParam("pageIndex","1")
-                .enqueue(new GsonResponseHandler<tzInfo>() {
+                .url(ApiConstants.xwdt_tpxwlistApi)
+                .jsonParams(jsonObject.toString())
+                .enqueue(new GsonResponseHandler<tpxwInfo>() {
                     @Override
                     public void onFailure(int statusCode, String error_msg) {
+
                         Log.e("TAG","失败");
                         hideLoadingDialog();
 //                      Toast.makeText(mContext, "服务器连接错误", Toast.LENGTH_SHORT).show();
-                        listview_my.setVisibility(View.GONE);
-                        noData.setVisibility(View.VISIBLE);
+                        if(listview_my != null){
+                            listview_my.setVisibility(View.GONE);
+                        }
+
+                        if(noData != null){
+                            noData.setVisibility(View.VISIBLE);
+                        }
+
                     }
 
                     @Override
-                    public void onSuccess(int statusCode, tzInfo response) {
+                    public void onSuccess(int statusCode, tpxwInfo response) {
+//                        Toast.makeText(mContext, response.getMessage(), Toast.LENGTH_SHORT).show();
+
                         Log.e("TAG","info:"+response.toString());
                         hideLoadingDialog();
-                        content = response.getData();
+                        content = response.getListinfo();
 //                        Log.e("TAG","info:"+content.size());
                         if(content != null && content.size() > 0){
                             listview_my.setVisibility(View.VISIBLE);
@@ -219,8 +242,13 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
                             noData.setVisibility(View.VISIBLE);
                         }
 
+
+
+
                     }
                 });
+
+
     }
 
 

@@ -62,12 +62,13 @@
 
 
             <customer.tcrj.com.zsproject.widget.MyGridView
+
                 android:id="@+id/grid_sign"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:horizontalSpacing="1dp"
-                android:listSelector="@null"
+                android:listSelector="@android:color/transparent"
                 android:numColumns="4"
                 android:scrollbars="none"
                 android:verticalSpacing="1dp" />

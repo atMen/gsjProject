@@ -21,4 +21,10 @@
     <color name="app_main_text">#585858</color>
     <color name="app_gray_line">#e0e0e0</color>
 
+    <color name="buttonBg">#CCCCCC</color>
+    <color name="buttonTextColor">#000000</color>
+
+    <color name="controller_bg_dark">#66000000</color>
+    <color name="controller_bg_light">#00000000</color>
+
 </resources>

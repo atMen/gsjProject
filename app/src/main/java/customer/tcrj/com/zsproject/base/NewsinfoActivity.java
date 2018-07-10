@@ -37,11 +37,23 @@ public class NewsinfoActivity extends BaseActivity {
         contentUrl = getIntent().getStringExtra("contentUrl");
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        //支持javascript
+        mWebView.getSettings().setJavaScriptEnabled(true);
+
+// 设置可以支持缩放
+        mWebView.getSettings().setSupportZoom(true);
+
+// 设置出现缩放工具
+        mWebView.getSettings().setBuiltInZoomControls(true);
+
+//设定支持viewport
+        mWebView.getSettings().setUseWideViewPort(true);
     }
 
     @Override
     protected void setData() {
-        mWebView.loadData(contentUrl, "text/html; charset=UTF-8",null);
+//        mWebView.loadData(contentUrl, "text/html; charset=UTF-8",null);
+        mWebView.loadUrl("http://ow365.cn/?i=16237&furl=http://113.200.26.66:8000/upfile/201609220553341.xlsx");
     }
 
     /**

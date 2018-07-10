@@ -14,7 +14,7 @@
     app:cardCornerRadius="5dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
-    app:contentPadding="13dp">
+    app:contentPadding="5dp">
 
     <LinearLayout
         android:orientation="vertical"

@@ -3,6 +3,9 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -12,13 +15,27 @@ buildscript {
     }
 }
 
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '24.0.1'
+            }
+        }
+    }
+}
+
 allprojects {
     repositories {
-        jcenter()
-        maven { url 'https://jitpack.io' }
+
+
         maven {
             url "https://maven.google.com"
         }
+        maven { url 'https://jitpack.io' }
+        jcenter()
     }
 }
 
