@@ -183,15 +183,18 @@ public class tzbbFregment extends BaseFragment implements AdapterView.OnItemClic
             case R.id.ck_qx:
 
                 if(cityCode != null){
-
+//                    toClass(mContext,jzfpqxtzInfoActivity.class);
                 }else {
                     T("请选择区县");
                 }
                 break;
 
             case R.id.sj:
-                toClass(mContext,jzfptzInfoActivity.class);//审批结果查询
+                //审批结果查询
+                toClass(mContext,jzfptzInfoActivity.class);
                 break;
+
+            default:
 
         }
     }

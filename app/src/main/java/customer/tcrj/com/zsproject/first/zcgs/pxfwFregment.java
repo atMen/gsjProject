@@ -218,7 +218,6 @@ public class pxfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
                 mPtrFrameLayout.refreshComplete();
             }
             if(isError){
-//                Toast.makeText(flfgListActivity.this, getResources().getString(R.string.data_failed), Toast.LENGTH_SHORT).show();
                 showFaild();
             }else{
                 showEmptyView();
@@ -275,10 +274,12 @@ public class pxfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
         Bundle bundle = new Bundle();
         bundle.putString("cover",ApiConstants.BASEIMAGE+cover);
+        bundle.putSerializable("pxInfo",item);
         if(format.contains("mp4")){
             toClass(mContext,VideoViewActivity.class,bundle);
-        }else if(format.contains("pdf")){
-            toClass(mContext,PdfActivity.class,bundle);
+        }else {
+//            toClass(mContext,PdfActivity.class,bundle);
+            toClass(mContext,PdfInfoActivity.class,bundle);
         }
 
     }

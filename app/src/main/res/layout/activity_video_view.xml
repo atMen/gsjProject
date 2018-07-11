@@ -10,4 +10,7 @@
         android:background="#000000"
         />
 
+    <include layout="@layout/wd_layout"/>
+
+
 </RelativeLayout>

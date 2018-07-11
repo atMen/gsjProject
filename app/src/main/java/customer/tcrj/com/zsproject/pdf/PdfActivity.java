@@ -92,7 +92,7 @@ public class PdfActivity extends AppCompatActivity implements View.OnClickListen
         pdfView.fromFile(absolutePath)
                 .enableAnnotationRendering(true)
                 .scrollHandle(new DefaultScrollHandle(this))
-                .spacing(10) // in dp
+                .spacing(10)
                 .pageFitPolicy(FitPolicy.BOTH)
                 .onError(new OnErrorListener() {
                     @Override
@@ -176,91 +176,6 @@ public class PdfActivity extends AppCompatActivity implements View.OnClickListen
             mLoadingDialog.dismiss();
         }
     }
-
-
-
-
-    private int number = -1;
-    Timer timer;
-    TimerTask timerTask;
-
-    Handler handlerTime = new Handler() {
-        public void handleMessage(Message msg) {
-
-            number++;
-//            num.setText(number+"");
-
-        }
-    };
-
-
-    private Handler handlerStopTime = new Handler() {
-
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case 0:
-                    stopTime();
-                    break;
-                case 1:
-                    startTime();
-                    break;
-                default:
-                    break;
-            }
-            super.handleMessage(msg);
-        }
-    };
-
-    @Override
-    protected void onPause() {
-        // TODO Auto-generated method stub
-        Message msg = new Message();
-        msg.what = 0;
-        handlerStopTime.sendMessage(msg);
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        // TODO Auto-generated method stub
-        Message msg = new Message();
-        msg.what = 1;
-        handlerStopTime.sendMessage(msg);
-        super.onResume();
-    }
-
-    private void startTime() {
-        if (timer == null) {
-            timer = new Timer();
-        }
-        if (timerTask == null) {
-            timerTask = new TimerTask() {
-
-                @Override
-                public void run() {
-                    Message msg = new Message();
-                    msg.what = 0;
-                    handlerTime.sendMessage(msg);
-                }
-            };
-        }
-        if (timer != null && timerTask != null) {
-            timer.schedule(timerTask, 0, 1000);
-        }
-    }
-
-    private void stopTime(){
-        if(timer!=null){
-            timer.cancel();
-            timer=null;
-        }
-        if(timerTask!=null){
-            timerTask.cancel();
-            timerTask=null;
-        }
-    }
-
 
 
 

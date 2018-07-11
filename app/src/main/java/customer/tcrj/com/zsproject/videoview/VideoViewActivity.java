@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.kk.taurus.playerbase.assist.OnVideoViewEventHandler;
 import com.kk.taurus.playerbase.entity.DataSource;
@@ -20,6 +21,7 @@ import com.kk.taurus.playerbase.receiver.ReceiverGroup;
 import com.kk.taurus.playerbase.widget.BaseVideoView;
 
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.bean.pxInfo;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
@@ -33,6 +35,10 @@ import kr.co.namee.permissiongen.PermissionSuccess;
 public class VideoViewActivity extends AppCompatActivity implements OnPlayerEventListener {
 
     private BaseVideoView mVideoView;
+    private TextView spmc;
+    private TextView scgs;
+    private TextView sctime;
+    private TextView tvjj;
 
 
     private int margin;
@@ -45,6 +51,7 @@ public class VideoViewActivity extends AppCompatActivity implements OnPlayerEven
     private boolean isLandscape;
 
     private boolean userPause;
+    pxInfo.ContentBean item;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,6 +69,19 @@ public class VideoViewActivity extends AppCompatActivity implements OnPlayerEven
         margin = PUtil.dip2px(this,2);
 
         mVideoView = (BaseVideoView) findViewById(R.id.videoView);
+        spmc = (TextView) findViewById(R.id.spmc);
+        scgs = (TextView) findViewById(R.id.scgs);
+        sctime = (TextView) findViewById(R.id.sctime);
+        tvjj = (TextView) findViewById(R.id.tvjj);
+
+        item = (pxInfo.ContentBean) getIntent().getSerializableExtra("pxInfo");
+
+        if(item != null){
+            spmc.setText("文件名称："+item.getTitle());
+            scgs.setText("上传公司："+item.getOrganizationName());
+            sctime.setText("上传时间："+item.getUploadTime());
+            tvjj.setText(item.getDescribe());
+        }
 
 
         PermissionGen.with(this)
@@ -107,13 +127,12 @@ public class VideoViewActivity extends AppCompatActivity implements OnPlayerEven
         mReceiverGroup.getGroupValue().putBoolean(DataInter.Key.KEY_IS_HAS_NEXT, true);
         mVideoView.setReceiverGroup(mReceiverGroup);
 
-//        //设置数据提供者 MonitorDataProvider
-//        MonitorDataProvider dataProvider = new MonitorDataProvider();
-//        mVideoView.setDataProvider(dataProvider);
+
+
         String file = getIntent().getStringExtra("cover");
+
         DataSource data = new DataSource(file);
         mVideoView.setDataSource(data);
-//        mVideoView.setDataSource(generatorDataSource(mDataSourceId));
         mVideoView.start();
 
         // If you want to start play at a specified time,

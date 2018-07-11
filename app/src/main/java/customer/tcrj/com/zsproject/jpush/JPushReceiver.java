@@ -81,7 +81,7 @@ public class JPushReceiver extends BroadcastReceiver {
                 /**
                  * 需要登陆且当前没有登陆才去登陆页面
                  */
-                if (pushMessage.messageType != null && pushMessage.messageType.equals("2")) {//还要判断是否需要登录
+                if (pushMessage.messageType != null && "2".equals(pushMessage.messageType)) {//还要判断是否需要登录
                     pushIntent.setClass(context, LoginActivity.class);
                     pushIntent.putExtra("fromPush", true);
                 } else {

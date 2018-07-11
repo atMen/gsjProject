@@ -191,7 +191,8 @@
         <activity android:name=".base.NewsinfoActivity" />
         <activity android:name=".RegisteActivity" />
         <activity android:name=".first.fwzx.zcgsinfoActivity" />
-        <activity android:name=".first.fwzx.jzfptzInfoActivity"></activity>
+        <activity android:name=".first.fwzx.jzfptzInfoActivity" />
+        <activity android:name=".first.zcgs.PdfInfoActivity"></activity>
     </application>
 
 </manifest>

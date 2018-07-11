@@ -106,7 +106,9 @@ public class flfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
     }
 
-    //错误页面的点击回调，重新加载数据
+    /**
+     * 错误页面的点击回调，重新加载数据
+     */
     @Override
     public void onRetry() {
         getData(pageNum);
@@ -153,13 +155,12 @@ public class flfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
                     @Override
                     public void onSuccess(int statusCode, flInfo response) {
-//                        Toast.makeText(mContext, response.getMessage(), Toast.LENGTH_SHORT).show();
 
-                        if(response.getErrorCode().equals("SUCCESS")){
+                        if("SUCCESS".equals(response.getErrorCode())){
 
-                            if(num > 1){//上拉加载
+                            if(num > 1){
                                 loadMoreData(response,false);
-                            }else{//下拉刷新
+                            }else{
                                 loadData(response.getData().get(0).getLawyers(),false);
                             }
 
@@ -172,7 +173,11 @@ public class flfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
     }
 
-    //上拉加载更多数据
+    /**
+     * 上拉加载更多数据
+     * @param response
+     * @param isError
+     */
     private void loadMoreData(flInfo response,boolean isError) {
         Log.e("TAG","loadMoreData");
         if (response == null) {
@@ -186,13 +191,14 @@ public class flfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
         } else {
 
-            if(response.getData().get(0).getLawyers() != null && response.getData().get(0).getLawyers().size() <= 0){//没有更多数据
+            if(response.getData().get(0).getLawyers() != null && response.getData().get(0).getLawyers().size() <= 0){
+                //没有更多数据
+
 
 
                     detailAdapter.loadMoreFail();
 
 
-//                Toast.makeText(mContext, getResources().getString(R.string.data_nomore), Toast.LENGTH_SHORT).show();
             }else{
                 List<flInfo.DataBean.LawyersBean> content = response.getData().get(0).getLawyers();
                 Log.e("TAG","content:"+content.size());
@@ -219,7 +225,6 @@ public class flfwFregment extends BaseFragment implements BaseQuickAdapter.OnIte
                 mPtrFrameLayout.refreshComplete();
             }
             if(isError){
-//                Toast.makeText(flfgListActivity.this, getResources().getString(R.string.data_failed), Toast.LENGTH_SHORT).show();
                 showFaild();
             }else{
                 showEmptyView();

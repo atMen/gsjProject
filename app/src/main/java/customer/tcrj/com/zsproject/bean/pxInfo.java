@@ -1,12 +1,13 @@
 package customer.tcrj.com.zsproject.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by leict on 2018/7/5.
  */
 
-public class pxInfo {
+public class pxInfo implements Serializable{
 
     /**
      * content : [{"cover":"/uploadfile//2018-06-29/20180629091428718.jpg","departmentId":"","describe":"asd","format":"docx","id":"470856a2d475422681befd080f03d6af","optime":{"date":27,"day":3,"hours":10,"minutes":38,"month":5,"nanos":215000000,"seconds":21,"time":1530067101215,"timezoneOffset":-480,"year":118},"organizationName":"","path":"/uploadfile//2018-06-29/20180629091407296.docx","playTime":18,"state":"0","timeLength":12,"title":"asd","trainType":"10301","trainTypeName":"","uploadTime":"2018-06-27 10:38:21","userId":"1","userName":""},{"cover":"/uploadfile//2018-06-29/20180629091046832.jpg","departmentId":"","describe":"12","format":"mp4","id":"5656835af70d4e4a838f58abecb69bce","optime":{"date":27,"day":3,"hours":10,"minutes":23,"month":5,"nanos":297000000,"seconds":53,"time":1530066233297,"timezoneOffset":-480,"year":118},"organizationName":"","path":"/uploadfile//2018-06-27/video.mp4","playTime":17,"state":"0","timeLength":12,"title":"测试标题","trainType":"10301","trainTypeName":"","uploadTime":"2018-06-27 10:23:53","userId":"1","userName":""},{"cover":"/uploadfile//2018-06-29/20180629090451753.jpg","departmentId":"","describe":"12","format":"mp4","id":"2c58873b7db34609b43cda192a7f085c","optime":{"date":27,"day":3,"hours":10,"minutes":22,"month":5,"nanos":648000000,"seconds":11,"time":1530066131648,"timezoneOffset":-480,"year":118},"organizationName":"","path":"/uploadfile//2018-06-29/20180629090439736.mp4","playTime":10,"state":"0","timeLength":11,"title":"测试1","trainType":"10301","trainTypeName":"","uploadTime":"2018-06-27 10:22:11","userId":"1","userName":""},{"cover":"/uploadfile//2018-06-29/20180629090524517.jpg","departmentId":"","describe":"","format":"mp4","id":"39e57c3a4237406e87e76f7fba0243d0","optime":{"date":26,"day":2,"hours":17,"minutes":38,"month":5,"nanos":929000000,"seconds":48,"time":1530005928929,"timezoneOffset":-480,"year":118},"organizationName":"","path":"/uploadfile//2018-06-29/20180629090520008.mp4","playTime":18,"state":"0","timeLength":12,"title":"测试2","trainType":"10301","trainTypeName":"","uploadTime":"2018-06-26 17:38:48","userId":"1","userName":""},{"cover":"/uploadfile//2018-06-29/20180629090948926.png","departmentId":"","describe":"asd","format":"pdf","id":"ece9a2f4b0d94a4dac2325b7909b54ee","optime":{"date":26,"day":2,"hours":15,"minutes":49,"month":5,"nanos":947000000,"seconds":40,"time":1529999380947,"timezoneOffset":-480,"year":118},"organizationName":"","path":"/uploadfile//2018-06-29/20180629090938013.pdf","playTime":12,"state":"0","timeLength":0,"title":"测试课件","trainType":"10301","trainTypeName":"","uploadTime":"2018-06-26 15:49:42","userId":"1","userName":""}]
@@ -102,10 +103,10 @@ public class pxInfo {
         this.content = content;
     }
 
-    public static class SortBean {
+    public static class SortBean implements Serializable{
     }
 
-    public static class ContentBean {
+    public static class ContentBean implements Serializable{
         /**
          * cover : /uploadfile//2018-06-29/20180629091428718.jpg
          * departmentId :
@@ -280,7 +281,7 @@ public class pxInfo {
             this.userName = userName;
         }
 
-        public static class OptimeBean {
+        public static class OptimeBean implements Serializable{
             /**
              * date : 27
              * day : 3

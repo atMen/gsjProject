@@ -144,12 +144,10 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 
                     @Override
                     public void onSuccess(int statusCode, tpxwInfo response) {
-//                        Toast.makeText(mContext, response.getMessage(), Toast.LENGTH_SHORT).show();
 
                         if(response.getState() == 1){
 
                             bannerList = response.getListinfo();
-//                            bannerList1 = response.getData().get(1);
 
                             Log.e("TAG","bannerList"+bannerList.size());
                             if(bannerList.size()>0 ){
@@ -160,7 +158,6 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
                                     Log.e("TAG","msg"+bannerList.get(i).getThumbUrl());
                                 }
                                 setBannerData(bannerList);
-//                                icon_title.setText(bannerList.get(0).getTitle());
                             }
 
                         }
@@ -302,6 +299,9 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
                 break;
             case 7:
 //                toClass(mContext,BaiduMapActivity.class);//地图位置
+                break;
+
+            default:
                 break;
         }
     }
