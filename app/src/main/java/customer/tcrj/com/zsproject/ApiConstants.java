@@ -31,6 +31,11 @@ public static final String URLBASE8080 = "http://192.168.20.240:8080/";
      */
     public static final String xwdt_tpxwlistApi = URLBASE+"drosin_cms/baseRest/findInfoList";
 
+
+
+
+
+
   /**
    * 新闻动态
    */
