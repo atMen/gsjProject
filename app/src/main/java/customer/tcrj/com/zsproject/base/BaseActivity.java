@@ -149,7 +149,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param context
      * @param clazz
      */
-    protected void toClass(Context context, Class clazz){
+    protected void  toClass(Context context, Class clazz){
         toClass(context,clazz,null);
     }
 
@@ -177,7 +177,9 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected void toClass(Context context, Class clazz, Bundle bundle, int reuqestCode){
         Intent intent = new Intent(context,clazz);
-        intent.putExtras(bundle);
+        if(bundle != null){
+            intent.putExtras(bundle);
+        }
         startActivityForResult(intent,reuqestCode);
     }
 

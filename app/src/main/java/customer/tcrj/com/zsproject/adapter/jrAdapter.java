@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -11,6 +12,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.List;
 
 import customer.tcrj.com.zsproject.R;
+import customer.tcrj.com.zsproject.bean.jdInfo;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
 
 
@@ -19,23 +21,34 @@ import customer.tcrj.com.zsproject.bean.qyListInfo;
  * author: Will .
  * date: 2017/9/27 .
  */
-public class jrAdapter extends BaseQuickAdapter<qyListInfo.DataBean.ContentBean, BaseViewHolder> {
+public class jrAdapter extends BaseQuickAdapter<jdInfo.ContentBean, BaseViewHolder> {
     private Context mContext;
 
-    public jrAdapter(@Nullable List<qyListInfo.DataBean.ContentBean> data, Context context) {
+    public jrAdapter(@Nullable List<jdInfo.ContentBean> data, Context context) {
         super(R.layout.item_jr, data);
         this.mContext = context;
     }
 
 
     @Override
-    protected void convert(final BaseViewHolder helper, qyListInfo.DataBean.ContentBean item) {
-//        TextView name = helper.getView(R.id.name);
-//        TextView time = helper.getView(R.id.time);
-//        TextView sex = helper.getView(R.id.sex);
-//        TextView duty = helper.getView(R.id.duty);
-        Button btnsq = helper.getView(R.id.btn_sq);
+    protected void convert(final BaseViewHolder helper, jdInfo.ContentBean item) {
+        TextView name = helper.getView(R.id.cpname);
+        TextView ywys = helper.getView(R.id.ywys);
+        TextView zgqx = helper.getView(R.id.zgqx);
+        TextView nll = helper.getView(R.id.nll);
+        TextView zged = helper.getView(R.id.zged);
 
+        name.setText(item.getWorkType());
+        ywys.setText("业务要素："+item.getYwgjys());
+        zgqx.setText("最高期限："+item.getLimit());
+        nll.setText("年利率："+item.getNll());
+        zged.setText("最高额度："+item.getQuota()+"万");
+
+
+
+
+
+        Button btnsq = helper.getView(R.id.btn_sq);
         btnsq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,8 +57,6 @@ public class jrAdapter extends BaseQuickAdapter<qyListInfo.DataBean.ContentBean,
                 }
             }
         });
-
-
 
     }
 

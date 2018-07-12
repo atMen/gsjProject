@@ -267,7 +267,7 @@ public class xwdtFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
         tpxwInfo.ListinfoBean item = (tpxwInfo.ListinfoBean) adapter.getItem(position);
 
-        String contentUrl = item.getContentUrl();
+        String contentUrl = item.getId();
         if(contentUrl != null){
             Bundle bundle = new Bundle();
             bundle.putString("contentUrl",contentUrl);

@@ -31,6 +31,11 @@ public static final String URLBASE8080 = "http://192.168.20.240:8080/";
      */
     public static final String xwdt_tpxwlistApi = URLBASE+"drosin_cms/baseRest/findInfoList";
 
+  /**
+   * 新闻动态
+   */
+  public static final String xwdt_xq_listApi = URLBASE+"drosin_cms/baseRest/findInfoDetails";
+
 
   /**
    * sxipept/courseWare/getCourseWareList
@@ -44,11 +49,14 @@ public static final String URLBASE8080 = "http://192.168.20.240:8080/";
   public static final String zcgs_listApi = URLBASE8080+"sxipept/aidpoor/getDeptInfoList";
 
   /**
-   * sxipept/serviceCentre/getProductList
+   * 借贷信息
    */
   public static final String fwzx_jr_listApi = URLBASE8080+"sxipept/serviceCentre/getProductList";
 
-
+  /**
+   * 银行信息
+   */
+  public static final String jr_bank_listApi = URLBASE8080+"sxipept/serviceCentre/getBankList";
   /**
    * 法律服务
    */

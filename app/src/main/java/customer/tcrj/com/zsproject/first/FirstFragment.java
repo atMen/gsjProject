@@ -33,6 +33,7 @@ import customer.tcrj.com.zsproject.R;
 import customer.tcrj.com.zsproject.adapter.MainMenuAdapter;
 import customer.tcrj.com.zsproject.adapter.MainMenuListAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
+import customer.tcrj.com.zsproject.base.NewsinfoActivity;
 import customer.tcrj.com.zsproject.bean.MenuEntity;
 import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.bean.tzInfo;
@@ -352,12 +353,16 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 //    tpxwInfo.ListinfoBean
     @Override
     public void OnBannerClick(int position) {
-//        tpxwInfo.ListinfoBean dataBean = bannerList.get(position);
-//        Bundle bundle = new Bundle();
-//        bundle.putSerializable("picInfo",dataBean);
-//        toClass(mContext,NewsDetailActivity.class,bundle);
+        tpxwInfo.ListinfoBean item = bannerList.get(position);
 
-        T(position+"");
+        String contentUrl = item.getId();
+        if(contentUrl != null){
+            Bundle bundle = new Bundle();
+            bundle.putString("contentUrl",contentUrl);
+            toClass(mContext,NewsinfoActivity.class,bundle);
+        }else {
+            T("未发现详细信息");
+        }
     }
 
 }

@@ -84,12 +84,7 @@ public class tzbbFregment extends BaseFragment implements AdapterView.OnItemClic
 
     }
     private void getGirdData(String code) {
-//        String cityJson = Utils.getJson(this, Constant.CITY_DATA);
-//
-//        zcgsInfo zcgsInfo = new Gson().fromJson(cityJson, zcgsInfo.class);
-//        adapter1.setData(zcgsInfo.getListinfo());
-//        myGridView.setAdapter(adapter1);
-
+        showLoadingDialog("正在加载...");
 
         JSONObject jsonObject = new JSONObject();
 
@@ -110,13 +105,14 @@ public class tzbbFregment extends BaseFragment implements AdapterView.OnItemClic
                     public void onFailure(int statusCode, String error_msg) {
 
 
+                        hideLoadingDialog();
 
                     }
 
                     @Override
                     public void onSuccess(int statusCode, JSONArray response) {
                         Log.e("TAG","JSONArray"+response.toString());
-
+                        hideLoadingDialog();
 
 
                         zcgsInfo = parseNoHeaderJArray(response.toString());
@@ -160,6 +156,7 @@ public class tzbbFregment extends BaseFragment implements AdapterView.OnItemClic
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.layout_work_naturejob:
+
                 cityCode = null;
                 isqx = true;
                 isdialog = true;

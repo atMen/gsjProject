@@ -13,10 +13,20 @@
         android:background="@drawable/bg_first"
         />
 
-
+    <TextView
+        android:layout_marginBottom="15dp"
+        android:id="@+id/tvtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="个人中心"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_18"
+        />
 
     <customer.tcrj.com.zsproject.widget.SuperScrollView
-        android:layout_marginTop="45dp"
+        android:layout_below="@+id/tvtitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -32,6 +42,8 @@
             android:orientation="vertical"
             android:layout_marginBottom="15dp"
             >
+
+
 
             <LinearLayout
                 android:padding="15dp"
@@ -76,7 +88,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_01"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -103,7 +115,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_02"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -128,10 +140,10 @@
 
 
             <RelativeLayout
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_03"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -158,7 +170,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_04"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -184,7 +196,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_05"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -209,10 +221,10 @@
 
 
             <RelativeLayout
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_06"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -239,7 +251,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_07"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -266,7 +278,7 @@
             <RelativeLayout
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_08"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -290,10 +302,10 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/bg_rl_mine"
                 android:id="@+id/rl_09"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -316,23 +328,7 @@
                     />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:background="@drawable/bg_rl_mine"
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:gravity="center"
-                    android:drawablePadding="10dp"
-                    android:layout_marginLeft="5dp"
-                    />
-
-            </RelativeLayout>
 
 
         </LinearLayout>

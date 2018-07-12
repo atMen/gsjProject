@@ -1,5 +1,6 @@
 package customer.tcrj.com.zsproject.first.gridbtn;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -22,6 +23,7 @@ import customer.tcrj.com.zsproject.MyApp;
 import customer.tcrj.com.zsproject.R;
 import customer.tcrj.com.zsproject.adapter.zxwjAdapter;
 import customer.tcrj.com.zsproject.base.BaseFragment;
+import customer.tcrj.com.zsproject.base.NewsinfoActivity;
 import customer.tcrj.com.zsproject.bean.qyListInfo;
 import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.widget.CustomLoadMoreView;
@@ -259,6 +261,15 @@ public class gzggFregment extends BaseFragment implements BaseQuickAdapter.OnIte
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+        tpxwInfo.ListinfoBean item = (tpxwInfo.ListinfoBean) adapter.getItem(position);
 
+        String contentUrl = item.getId();
+        if(contentUrl != null){
+            Bundle bundle = new Bundle();
+            bundle.putString("contentUrl",contentUrl);
+            toClass(mContext,NewsinfoActivity.class,bundle);
+        }else {
+            T("未发现详细信息");
+        }
     }
 }
