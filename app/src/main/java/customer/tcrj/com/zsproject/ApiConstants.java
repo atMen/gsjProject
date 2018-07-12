@@ -26,6 +26,11 @@ public static final String URLBASE8080 = "http://192.168.20.240:8080/";
   public static final String BASEIMAGE = "http://192.168.20.240:8080/web.files";
 
 
+
+
+
+
+
     /**
      * 新闻动态
      */
