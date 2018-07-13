@@ -20,25 +20,16 @@ public class ApiConstants {
   public static final String MTGZ = "BZjmqi";
 
 
-//http://192.168.20.240:8181/
-public static final String URLBASE8080 = "http://192.168.20.240:8080/";
+  //http://192.168.20.240:8181/
+  public static final String URLBASE8080 = "http://192.168.20.240:8080/";
   public static final String URLBASE = "http://192.168.20.240:8181/";
   public static final String BASEIMAGE = "http://192.168.20.240:8080/web.files";
-
-
-
-
-
 
 
     /**
      * 新闻动态
      */
     public static final String xwdt_tpxwlistApi = URLBASE+"drosin_cms/baseRest/findInfoList";
-
-
-
-
 
 
   /**
