@@ -39,7 +39,7 @@
             <TextView
                 android:layout_gravity="center_horizontal"
                 android:layout_toRightOf="@+id/text"
-                android:text="组织风采"
+                android:text="协会动态"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:text="共青妇资讯"
+                android:text="民意征集"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:text="党团活动"
+                android:text="网上调查"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
@@ -124,14 +124,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/cy"
-                android:text="企业基本信息" />
+                />
 
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="综合公告" />
+                android:text="省个协会" />
         </LinearLayout>
     </LinearLayout>
 
@@ -156,17 +156,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/sj"
-                android:text="企业基本信息" />
+                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="诚信文明" />
+                android:text="行业协会" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="invisible"
             android:gravity="center"
             android:orientation="vertical"
             android:id="@+id/rl_06"
@@ -193,65 +194,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            android:id="@+id/rl_07"
-            android:layout_margin="@dimen/dp_4"
-            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="100dp">
-
-            <ImageView
-                android:layout_gravity="center_horizontal"
-                android:id="@+id/text7"
-                android:background="@drawable/sj"
-                android:text="企业基本信息"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:text="先进表彰"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-        </LinearLayout>
-
-        <RelativeLayout
-            android:visibility="invisible"
-            android:id="@+id/rl_08"
-            android:gravity="center"
-            android:layout_margin="@dimen/dp_4"
-            android:background="@drawable/bg_button_background"            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="100dp">
-
-            <ImageView
-                android:layout_marginRight="@dimen/dp_4"
-                android:id="@+id/text8"
-                android:layout_centerVertical="true"
-                android:text="企业基本信息"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/text8"
-                android:text="计量器具信息"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-        </RelativeLayout>
-    </LinearLayout>
 
 
 

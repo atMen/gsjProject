@@ -6,17 +6,22 @@
     <!--<include layout="@layout/title" />-->
 
 
-    <com.baiiu.filter.DropDownMenu
-        android:id="@+id/dropDownMenu"
+    <!--<com.baiiu.filter.DropDownMenu-->
+        <!--android:id="@+id/dropDownMenu"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--&gt;-->
+    <!--</com.baiiu.filter.DropDownMenu>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_h"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-    </com.baiiu.filter.DropDownMenu>
-
-
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
     <LinearLayout
-        android:layout_below="@+id/dropDownMenu"
+        android:layout_below="@+id/recycler_h"
         android:id="@+id/ll"
         android:orientation="vertical"
         android:layout_width="match_parent"

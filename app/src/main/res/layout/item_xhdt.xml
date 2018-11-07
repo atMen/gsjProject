@@ -3,24 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<include layout="@layout/title" />-->
-
-
-    <com.baiiu.filter.DropDownMenu
-        android:id="@+id/dropDownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-    </com.baiiu.filter.DropDownMenu>
-
-
-
-    <LinearLayout
-        android:layout_below="@+id/dropDownMenu"
-        android:id="@+id/ll"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <in.srain.cube.views.ptr.PtrClassicFrameLayout
             android:id="@+id/mPtrFrameLayout"
@@ -45,9 +27,6 @@
             </customer.tcrj.com.zsproject.widget.SimpleMultiStateView>
 
         </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-
-    </LinearLayout>
-
 
 
 </RelativeLayout>

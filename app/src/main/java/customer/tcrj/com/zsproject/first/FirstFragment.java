@@ -37,11 +37,15 @@ import customer.tcrj.com.zsproject.base.NewsinfoActivity;
 import customer.tcrj.com.zsproject.bean.MenuEntity;
 import customer.tcrj.com.zsproject.bean.tpxwInfo;
 import customer.tcrj.com.zsproject.bean.tzInfo;
+import customer.tcrj.com.zsproject.first.cyzj.ChangYeZhiJiajActivity;
 import customer.tcrj.com.zsproject.first.fgdtj.fgdtjActivity;
 import customer.tcrj.com.zsproject.first.fwzx.fwzx2Activity;
 import customer.tcrj.com.zsproject.first.gridbtn.xwdtInfoActivity;
 import customer.tcrj.com.zsproject.first.jzfp.jzfpActivity;
+import customer.tcrj.com.zsproject.first.xhzc.XieHuizhiChuangActivity;
 import customer.tcrj.com.zsproject.first.zcgs.zcgsActivity;
+import customer.tcrj.com.zsproject.first.zscq.ZhiShiChanQuanActivity;
+import customer.tcrj.com.zsproject.first.zscq.zscqActivity;
 import customer.tcrj.com.zsproject.widget.GlideImageLoader;
 import customer.tcrj.com.zsproject.widget.MyGridView;
 import customer.tcrj.com.zsproject.widget.MyListView;
@@ -296,17 +300,20 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
                 toClass(mContext,fgdtjActivity.class);//非公党团
                 break;
             case 6:
-//                toClass(mContext,xzzfListActivity.class);//行政执法
+                toClass(mContext,ChangYeZhiJiajActivity.class);//创业之家
                 break;
             case 7:
-//                toClass(mContext,BaiduMapActivity.class);//地图位置
+                toClass(mContext,zscqActivity.class);//知识产权
+                break;
+
+            case 9:
+                toClass(mContext,XieHuizhiChuangActivity.class);//协会之窗
                 break;
 
             default:
                 break;
         }
     }
-
 
 //    @Override
 //    public void onClick(View v) {
@@ -330,7 +337,6 @@ public class FirstFragment extends BaseFragment implements AdapterView.OnItemCli
 //
 //    }
 
-    //如果你需要考虑更好的体验，可以这么操作
     @Override
     public void onStart() {
         super.onStart();

@@ -17,82 +17,78 @@
     app:contentPadding="8dp">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-
-
-            <TextView
-                android:id="@+id/cpname"
-                android:textSize="@dimen/font_size_18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text="小微抵押业务"
-                android:maxLines="1"
-                />
 
         <TextView
-            android:layout_marginTop="8dp"
+            android:id="@+id/cpname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="小微抵押业务"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_18" />
+
+        <TextView
             android:id="@+id/ywys"
-            android:textSize="@dimen/font_size_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="业务要素：深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款"
+            android:layout_marginTop="8dp"
             android:lineSpacingExtra="5dp"
+            android:text="业务要素：深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款深刻了解到付货款"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_14"
 
             />
 
         <TextView
-            android:layout_marginTop="7dp"
             android:id="@+id/zgqx"
-            android:textSize="@dimen/font_size_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginTop="7dp"
             android:text="最高期限："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_14"
 
             />
+
         <TextView
-            android:layout_marginTop="7dp"
             android:id="@+id/nll"
-            android:textSize="@dimen/font_size_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginTop="7dp"
             android:text="年利率："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_14"
 
             />
 
         <TextView
-            android:layout_marginTop="7dp"
             android:id="@+id/zged"
-            android:textSize="@dimen/font_size_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:layout_marginTop="7dp"
             android:text="最高额度："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_size_14"
 
             />
-
 
 
         <Button
             android:id="@+id/btn_sq"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/btn_bg"
             android:text="我有申请意向"
             android:textColor="@color/white"
-            android:layout_marginBottom="15dp"
 
             />
-
-
 
 
     </LinearLayout>

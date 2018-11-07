@@ -39,7 +39,7 @@
             <TextView
                 android:layout_gravity="center_horizontal"
                 android:layout_toRightOf="@+id/text"
-                android:text="组织风采"
+                android:text="商标注册缴费"
                 android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:text="共青妇资讯"
+                android:text="商标代理"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
@@ -100,7 +100,7 @@
             <TextView
                 android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
-                android:text="党团活动"
+                android:text="商标质押"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="综合公告" />
+                android:text="商标国际注册" />
         </LinearLayout>
     </LinearLayout>
 
@@ -162,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="诚信文明" />
+                android:text="知识产权法律援助服务" />
 
         </LinearLayout>
 
@@ -185,7 +185,7 @@
 
             <TextView
                 android:layout_gravity="center_horizontal"
-                android:text="秦商德风"
+                android:text="线上商标馆"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />
@@ -218,7 +218,7 @@
 
             <TextView
                 android:layout_gravity="center_horizontal"
-                android:text="先进表彰"
+                android:text="商标品牌建设政策解读"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 />

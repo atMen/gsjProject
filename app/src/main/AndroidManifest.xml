@@ -192,7 +192,17 @@
         <activity android:name=".RegisteActivity" />
         <activity android:name=".first.fwzx.zcgsinfoActivity" />
         <activity android:name=".first.fwzx.jzfptzInfoActivity" />
-        <activity android:name=".first.zcgs.PdfInfoActivity"></activity>
+        <activity android:name=".first.zcgs.PdfInfoActivity" />
+        <activity android:name=".first.fgdtj.zzfcActivity" />
+        <activity android:name=".first.zscq.ZhiShiChanQuanActivity" />
+        <activity android:name=".first.cyzj.ChangYeZhiJiajActivity" />
+        <activity android:name=".first.cyzj.FuChiZhengCeShenQinActivity" />
+        <activity android:name=".first.cyzj.MingXingQiYeActivity" />
+        <activity android:name=".first.xhzc.XieHuizhiChuangActivity" />
+        <activity android:name=".first.xhzc.XieHuiDongTaiActivity" />
+        <activity android:name=".first.zscq.zscqActivity" />
+        <activity android:name=".first.zscq.ZhiShiChanQuanFaLvYuanZhuInfoActivity"></activity>
+        <activity android:name=".first.zscq.ZhiShiChanQuanFaLvYuanZhuActivity"/>
     </application>
 
 </manifest>

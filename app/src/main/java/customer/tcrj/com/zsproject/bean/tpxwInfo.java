@@ -53,6 +53,14 @@ public class tpxwInfo {
     }
 
     public static class ListinfoBean {
+        public boolean isselect() {
+            return isselect;
+        }
+
+        public void setIsselect(boolean isselect) {
+            this.isselect = isselect;
+        }
+
         /**
          * id : VbMvMn
          * optime : 1529637725821
@@ -102,6 +110,8 @@ public class tpxwInfo {
          * timerEndN : 0
          */
 
+
+        private boolean isselect;
         private String id;
         private long optime;
         private String categoryId;
@@ -148,6 +158,10 @@ public class tpxwInfo {
         private Object timerEnd;
         private String timerEndN;
         private List<?> children;
+
+        public ListinfoBean(String title) {
+            this.title = title;
+        }
 
         public String getId() {
             return id;

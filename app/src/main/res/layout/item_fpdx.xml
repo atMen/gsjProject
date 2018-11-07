@@ -176,7 +176,6 @@
 
             <TextView
                 android:gravity="center_horizontal"
-                android:id="@+id/cpname"
                 android:textSize="15sp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -190,7 +189,6 @@
                 android:textColor="@color/white"
                 android:gravity="center_horizontal"
                 android:layout_marginLeft="15dp"
-                android:id="@+id/cptime"
                 android:textSize="15sp"
                 android:layout_width="0dp"
                 android:layout_weight="1"

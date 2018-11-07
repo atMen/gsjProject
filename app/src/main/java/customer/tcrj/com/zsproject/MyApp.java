@@ -32,7 +32,7 @@ public class MyApp extends Application {
         super.onCreate();
         sMyApp = this;
         initOkhttp();
-        initJPush();
+//        initJPush();
         initPlayer();
     }
 

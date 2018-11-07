@@ -1,7 +1,5 @@
-package customer.tcrj.com.zsproject.first.fgdtj;
+package customer.tcrj.com.zsproject.first.zscq;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,12 +9,10 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import customer.tcrj.com.zsproject.R;
 import customer.tcrj.com.zsproject.base.BaseActivity;
-import customer.tcrj.com.zsproject.first.zcgs.cyfwActivity;
-import customer.tcrj.com.zsproject.first.zcgs.flActivity;
-import customer.tcrj.com.zsproject.first.zcgs.jrActivity;
-import customer.tcrj.com.zsproject.first.zcgs.pxActivity;
+import customer.tcrj.com.zsproject.first.fgdtj.dthdActivity;
+import customer.tcrj.com.zsproject.first.fgdtj.zzfcActivity;
 
-public class fgdtjActivity extends BaseActivity {
+public class zscqActivity extends BaseActivity {
 
     @BindView(R.id.rl_01)
     LinearLayout rl01;
@@ -40,7 +36,7 @@ public class fgdtjActivity extends BaseActivity {
 
     @Override
     protected int setLayout() {
-        return R.layout.activity_fgdtj;
+        return R.layout.activity_zscq;
     }
 
     @Override
@@ -58,31 +54,31 @@ public class fgdtjActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.rl_01:
-                toClass(this,zzfcActivity.class);//组织风采
+//                toClass(this,zzfcActivity.class);//商标注册缴费
 
                 break;
 
             case R.id.rl_02:
 
-//                toClass(this,flActivity.class);//法律
+                toClass(this,ZhiShiChanQuanActivity.class);//商标代理
 
                 break;
 
             case R.id.rl_03:
-                toClass(this,dthdActivity.class);//培训
+//                toClass(this,dthdActivity.class);//商标质押
                 break;
 
             case R.id.rl_04:
-//                toClass(this,cyfwActivity.class);//创业
+//                toClass(this,ZhiShiChanQuanFaLvYuanZhuActivity.class);//商标国际注册
                 break;
             case R.id.rl_05:
-//                toClass(this,sjActivity.class);//数据
+                toClass(this,ZhiShiChanQuanFaLvYuanZhuActivity.class);//知识产权法律援助服务
                 break;
             case R.id.rl_06:
-//                toClass(this,sjActivity.class);//数据
+//                toClass(this,sjActivity.class);//线上商标馆
                 break;
             case R.id.rl_07:
-//                toClass(this,sjActivity.class);//数据
+//                toClass(this,sjActivity.class);//商标品牌建设政策解读
                 break;
 
             case R.id.btnback:
